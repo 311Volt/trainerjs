@@ -1,0 +1,17 @@
+:root {
+	--tbgcol-lv0: #CFD8E2;
+	--tbgcol-lv1: #B9C2CC;
+	--tbgcol-lv2: #A4ACB6;
+	--tbgcol-lv3: #8F97A0;
+	--tbgcol-lv4: #7A828B;
+	--tbgcol-focus: #646479;
+	--tbgcol-hover: #707090;
+	--tbgcol-ok: #607565;
+	--tbgcol-err: #8f5757;
+	--tcol-text: #333333;
+	--tcol-text-gray: #838383;
+	--tcol-link: #A0A0F0;
+	--tcol-link-vis: #D090D0;
+	--tcol-ok: #8ec69a;
+	--tcol-err: #df7070;
+}

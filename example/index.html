@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="style/color-scheme-dark.css" />
+        <link rel="stylesheet" href="style/quiz.css" />
+
+        <script type="module" src="../src/entry.js"></script>
+
+    </head>
+
+    <body>
+        <nav id="tr-title-bar">
+            <h1>trainer alpha</h1>
+        </nav>
+        <div id="tr-content">
+            <div class="trc-question trc-lv2" id="tr-current-question">
+				<strong class="trc-question-number">Loading...</strong>
+				<p class="trc-question-text">
+                    Please wait.<br />
+                    If JavaScript is disabled in your browser, click here: 
+                    <a href="http://jandaciuk.pl">leave the page</a>
+                </p>
+                
+				<div class="trc-question-container">
+                    
+				</div>
+
+                <div class="trc-navigation-buttons">
+                    <button class="trc-button-evaluate" style="display:none;">Sprawdź >></button>
+                    <button class="trc-button-next-question" style="display:none;">Następne pytanie >></button>
+                    <button class="trc-button-restart" style="display:none;">Spróbuj ponownie</button>
+                </div>
+            </div>
+
+            <div class="trc-answer trc-lv2" id="tr-current-answer">
+
+            </div>
+
+            <div class="trc-browser trc-lv2" id="tr-resource-browser">
+                <div class="trc-container-transparent" id="tr-rb-buttons">
+					<button data-tab-id="0" class="trc-tab-button trc-tab-button-active trc-rb-overview">Podsumowanie</button>
+					<button data-tab-id="1" class="trc-tab-button trc-rb-slides">Slajdy</button>
+					<button data-tab-id="2" class="trc-tab-button trc-rb-rec">Nagranie</button>
+				</div>
+				<div class="trc-rb-container trc-lv4">
+                    &nbsp;
+				</div>
+            </div>
+            <footer>
+                <p>
+                    zdecydowanie odradzam tamten inny tester:
+                    <a href="https://jakubbedra.github.io/giga-tester">
+                        https://jakubbedra.github.io/giga-tester
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+:root {
+	--tbgcol-lv0: #111119;
+	--tbgcol-lv1: #212129;
+	--tbgcol-lv2: #31313B;
+	--tbgcol-lv3: #41414C;
+	--tbgcol-lv4: #4D4D59;
+	--tbgcol-focus: #646479;
+	--tbgcol-hover: #707090;
+	--tbgcol-ok: #607565;
+	--tbgcol-err: #8f5757;
+	--tcol-text: #d0d0d0;
+	--tcol-text-gray: #838383;
+	--tcol-link: #A0A0F0;
+	--tcol-link-vis: #D090D0;
+	--tcol-ok: #8ec69a;
+	--tcol-err: #df7070;
+
+	--tboxshadow-btn: #26262F 2px 2px 6px;
+	--tboxshadow-block: #19191F 2px 2px 6px;
+}

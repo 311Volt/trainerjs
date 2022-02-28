@@ -1,0 +1,1 @@
+esbuild --bundle src/entry.js --target=chrome49 --minify --outfile=trainer.js

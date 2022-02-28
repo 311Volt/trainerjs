@@ -1,0 +1,68 @@
+[
+    {
+        "questionType": "closed-ended",
+        "question": "ile lat mial dziadek lebiedzia jak pierwszy raz zaruchal?",
+        "answers": [
+            "21",
+            "mniej niz ty",
+            "37",
+            "tyle ile miala babka lebiedzia jak byla w wieku dziadka lebiedzia jak pierwszy raz zaruchal"
+        ],
+        "correctAnswer": 3,
+        "relevantResources": {
+            "r1": {
+                "resource": "W01",
+                "ytTimestamps": ["14m37s"],
+                "pdfPages": [3,4,5]
+            },
+            "r2": {
+                "resource": "W01",
+                "ytTimestamps": ["4m20s, 6m9s"],
+                "pdfPages": [14,88]
+            }
+        }
+    },
+    {
+        "questionType": "closed-ended-multi",
+        "question": "czy jebac hujownie?",
+        "answers": [
+            "jeszcze jak",
+            "w huj",
+            "grubo",
+            "nie za bardzo"
+        ],
+        "correctAnswers": [0, 1, 2],
+        "relevantResources": {
+            "r1": {
+                "resource": "W01",
+                "ytTimestamps": ["14m37s"],
+                "pdfPages": [3,4,5]
+            }
+        }
+    },
+    {
+        "questionType": "open-ended",
+        "question": "dlaczego javashit to shit? wyjasnij w conajmniej 3 zdaniach",
+        "exampleAnswer": "Why do I hate JavaShit? There used to be the days when browsing the Worl",
+        "evaluable": false
+    },
+    {
+        "questionType": "open-ended-multi",
+        "question": "ile to: ",
+        "subQuestions": [
+            {
+                "question": "2+2",
+                "exampleAnswer": "4"
+            },
+            {
+                "question": "sqrt(144)",
+                "exampleAnswer": "12"
+            },
+            {
+                "question": "5!",
+                "exampleAnswer": "120"
+            }
+        ],
+        "evaluable": true
+    }
+]
