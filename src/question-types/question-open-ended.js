@@ -19,7 +19,7 @@ export class TrainerOEQView {
     }
 
     getAnswer() {
-        return this.eTextArea.value.trim();
+        return this.eTextArea.value.trim().toLowerCase();
     }
 }
 
@@ -34,7 +34,8 @@ export class TrainerOEQ extends TrainerQuestion {
     }
 
     getScore() {
-        return (this.view.getAnswer() == this.qData.exampleAnswer.trim()) ? 1.0 : 0.0;
+        let correctAnswer = this.qData.exampleAnswer.trim().toLowerCase();
+        return (this.view.getAnswer() == correctAnswer) ? 1.0 : 0.0;
     }
 
     evaluate() {

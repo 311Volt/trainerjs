@@ -37,7 +37,7 @@ class TrainerOEQMultiView {
     }
 
     getAnswer(pos) {
-        return this.containerElement.getElementsByTagName("textarea")[pos].value.trim();
+        return this.containerElement.getElementsByTagName("textarea")[pos].value.trim().toLowerCase();
     }
 
     static createTextArea() {
@@ -69,7 +69,7 @@ export class TrainerOEQMulti extends TrainerQuestion {
         let ret = 0;
         for(let i=0; i<this.qData.subQuestions.length; i++) {
             ret += (
-                this.qData.subQuestions[i].exampleAnswer.trim() == this.view.getAnswer(i)
+                this.qData.subQuestions[i].exampleAnswer.trim().toLowerCase() == this.view.getAnswer(i)
             ) ? 1.0 : 0.0;
         }
         ret /= this.qData.subQuestions.length;
