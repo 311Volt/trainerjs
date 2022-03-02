@@ -60,7 +60,7 @@ export class TrainerOEQMulti extends TrainerQuestion {
 
     show() {
         this.qData.subQuestions.forEach(q => {
-            console.log(q);
+            //console.log(q);
             this.view.addSubQuestion(q);
         });
     }

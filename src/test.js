@@ -135,8 +135,12 @@ export class TrainerTest {
                 this.view.showNextQuestionButton();
                 this.ansViewer.show(q.qData);
                 this.score += q.getScore();
-                this.resBrowser.init(q.qData.relevantResources, this.resources);
-                this.resBrowser.show();
+                if(q.qData.relevantResources) {
+                    this.resBrowser.init(q.qData.relevantResources, this.resources);
+                    this.resBrowser.show();
+                } else {
+                    this.resBrowser.view.showError("Dla tego pytania nie wprowadzono odnośników do materiałów.");
+                }
             };
             q.show();
         }

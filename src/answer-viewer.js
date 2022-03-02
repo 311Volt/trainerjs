@@ -17,10 +17,13 @@ export class TrainerAnswerViewer {
     }
 
     show(qData) {
-        console.log(qData);
+        //console.log(qData);
         this.containerElement.innerHTML = "";
         this.containerElement.style.display = "block";
-        let hdrText = qData.questionType.includes("open") ? "Przykładowe odpowiedzi" : "Poprawne odpowiedzi";
+        //let hdrText = qData.questionType.includes("open") ? "Przykładowe odpowiedzi" : "Poprawne odpowiedzi";
+        let isOpen = qData.questionType.includes("open") && (!qData.evaluable);
+        let isMulti = qData.questionType.includes("multi");
+        let hdrText = (isMulti?"Odpowiedzi":"Odpowiedź") + (isOpen?" (przykład)":"");
 
         let answerList = new Array();
 

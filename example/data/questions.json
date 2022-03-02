@@ -12,12 +12,12 @@
         "relevantResources": {
             "r1": {
                 "resource": "W01",
-                "ytTimestamps": ["14m37s"],
+                "ytTimestamps": ["1m4s", "1m40s"],
                 "pdfPages": [3,4,5]
             },
             "r2": {
                 "resource": "W01",
-                "ytTimestamps": ["4m20s, 6m9s"],
+                "ytTimestamps": ["4m20s", "6m9s"],
                 "pdfPages": [14,88]
             }
         }

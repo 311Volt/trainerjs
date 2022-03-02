@@ -3,10 +3,10 @@ import * as com from "./common.js"
 
 var g_Test = undefined;
 
-window.onload = function() {
+function startTest(resourceFile, questionFile) {
 	Promise.all([
-		fetch('data/resources.json'),
-		fetch('data/questions.json')
+		fetch(resourceFile),
+		fetch(questionFile)
 	]).then(values => {
 		Promise.all([
 			values[0].json(),
@@ -18,4 +18,8 @@ window.onload = function() {
 	}).catch(err => {
 		console.error(err.message);
 	});
+}
+
+window.onload = function() {
+	startTest('data/resources.json', 'data/questions.json');
 }
