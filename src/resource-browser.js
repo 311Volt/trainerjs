@@ -22,13 +22,13 @@ class TRBView {
     }
 
     show() {
-        this.eCTopicSelector.style.display = "block";
         this.eCButtons.style.display = "block";
         this.containerElement.style.display = "block";
     }
 
     hide() {
         this.containerElement.style.display = "none";
+        this.eCTopicSelector.style.display = "none";
     }
 
     init() {
@@ -112,6 +112,7 @@ class TRBView {
     }
 
     showTopicSelector(topicList, callback) {
+        this.eCTopicSelector.style.display = "block";
         for(let i=0; i<topicList.length; i++) {
             let btn = document.createElement("button");
             btn.classList.add("trc-rb-topic");
