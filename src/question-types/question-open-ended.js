@@ -14,6 +14,7 @@ export class TrainerOEQView {
     }
 
     showTextArea() {
+        this.containerElement.innerHTML = "";
         this.eTextArea = TrainerOEQView.createTextArea();
         this.containerElement.appendChild(this.eTextArea);
     }

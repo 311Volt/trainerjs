@@ -102,8 +102,8 @@ export class TrainerTest {
 
     getQuestionAt(index) {
         // *************CHANGE THIS BACK*************
-        //return this.questions[this.questionPermutation[index]];
-        return this.questions[index];
+        return this.questions[this.questionPermutation[index]];
+        //return this.questions[index];
     }
 
     getCurrentQuestion() {

@@ -27,9 +27,8 @@ class TrainerOEQMultiView {
         return ret;
     }
 
-    showSubQuestions() {
-        let tab = document.createElement("table");
-
+    clear() {
+        this.containerElement.innerHTML = "";
     }
 
     addSubQuestion(subQ) {
@@ -59,6 +58,7 @@ export class TrainerOEQMulti extends TrainerQuestion {
     }
 
     show() {
+        this.view.clear();
         this.qData.subQuestions.forEach(q => {
             //console.log(q);
             this.view.addSubQuestion(q);

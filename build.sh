@@ -1,1 +1,1 @@
-esbuild --bundle src/entry.js --target=chrome49 --minify --minify-identifiers --outfile=trainer.js
+esbuild --bundle src/main.js --target=chrome49 --minify --outfile=trainer.js --global-name=trainerjs
