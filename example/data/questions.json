@@ -1,12 +1,12 @@
 [
     {
         "questionType": "closed-ended",
-        "question": "ile lat mial dziadek lebiedzia jak pierwszy raz zaruchal?",
+        "question": "tresc pytania 1",
         "answers": [
-            "21",
-            "mniej niz ty",
-            "37",
-            "tyle ile miala babka lebiedzia jak byla w wieku dziadka lebiedzia jak pierwszy raz zaruchal"
+            "zla odp 1",
+            "zla odp 2",
+            "zla odp 3",
+            "poprawna odp"
         ],
         "correctAnswer": 3,
         "relevantResources": {
@@ -24,12 +24,12 @@
     },
     {
         "questionType": "closed-ended-multi",
-        "question": "czy jebac hujownie?",
+        "question": "tresc pytania 2 ceq-multi",
         "answers": [
-            "jeszcze jak",
-            "w huj",
-            "grubo",
-            "nie za bardzo"
+            "popr1",
+            "popr2",
+            "popr3",
+            "niepopr"
         ],
         "correctAnswers": [0, 1, 2],
         "relevantResources": {
@@ -42,8 +42,8 @@
     },
     {
         "questionType": "open-ended",
-        "question": "dlaczego javashit to shit? wyjasnij w conajmniej 3 zdaniach",
-        "exampleAnswer": "Why do I hate JavaShit? There used to be the days when browsing the Worl",
+        "question": "tresc pytania 3 open",
+        "exampleAnswer": "przykladowa odpowiedz",
         "evaluable": false
     },
     {
