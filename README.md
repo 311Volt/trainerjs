@@ -5,7 +5,8 @@ A simple, fully static quiz app written in pure JavaScript (ES6). Its primary fe
 This library uses ES6 modules. `build.sh` uses `esbuild` to bundle.
 
 # usage
-Use the template HTML file provided in the `example` folder. The user is free to make changes to the page layout as well as the stylesheet.
+Use the template provided in the `example` folder. The user is free to make changes to the page layout as well as the stylesheet.
+The `data` folder contains question data.
 
 # browser support
 Each release will be tested on Chrome 49 and Firefox 52 as well as the latest versions of these browsers. IE is completely unsupported.
