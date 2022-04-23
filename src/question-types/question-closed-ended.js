@@ -75,6 +75,7 @@ export class TrainerCEQ extends TrainerQuestion {
     }
 
     show() {
+        this.selectedAnswers.clear();
         this.render();
     }
 
@@ -86,6 +87,7 @@ export class TrainerCEQ extends TrainerQuestion {
         this.view.renderAnswers(this.qData.answers, this.ansPermutation, position => {
             this.selectAnswer(position);
         });
+        this.view.updateAnswerSelections(this.selectedAnswers, this.ansInvPermutation);
     }
 
     selectAnswer(pos) {
