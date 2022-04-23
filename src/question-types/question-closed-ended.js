@@ -90,7 +90,7 @@ export class TrainerCEQ extends TrainerQuestion {
     render() {
         this.view.renderAnswers(this.qData.answers, this.ansPermutation, position => {
             this.selectAnswer(position);
-        });
+        }, this.isMulti);
         this.view.updateAnswerSelections(this.selectedAnswers, this.ansInvPermutation);
     }
 
