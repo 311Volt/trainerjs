@@ -12,10 +12,6 @@ export class TrainerCEQMulti extends TrainerCEQ {
         this.correctAnswers = new Set(this.qData.correctAnswers.map((x) => String(x)));
     }
 
-    show() {
-        this.render();
-    }
-
     selectAnswer(pos) {
         let strQAtPos = String(this.ansPermutation[pos]);
         if(this.selectedAnswers.has(strQAtPos)) {

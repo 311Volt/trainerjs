@@ -74,7 +74,6 @@ export class TrainerTest {
         this.resBrowser = new TrainerResourceBrowser(com.byId("tr-resource-browser"));
         this.resources = srcResources;
         this.questionsData = srcQuestions;
-        this.score = 0;
         this.questions = this.questionsData.map(
             q => (createQuestionFromInputObject(this.view.eQC, q))
         );
@@ -92,6 +91,7 @@ export class TrainerTest {
 
     init() {
         this.questionPermutation = com.randomPermutation(this.questions.length);
+        this.score = 0;
         this.currentQuestionIndex = 0;
         this.showQuestion(0);
     }
