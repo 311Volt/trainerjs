@@ -80,9 +80,14 @@ class TRBView {
         return ytiframe;
     }
 
-    updateTabButtons(num) {
+    updateTabButtons(num, disable) {
         let buttons = this.eCButtons.getElementsByClassName("trc-tab-button")
         for(let i=0; i<buttons.length; i++) {
+            if(disable.has(i)) {
+                buttons[i].style.display = "none";
+            } else {
+                buttons[i].style.display = "inline-block";
+            }
             if(num == i) {
                 buttons[i].classList.add("trc-tab-button-active");
             } else {
@@ -135,8 +140,11 @@ class TRBView {
         
         let ytLink = document.createElement("div");
         let ytURL = "https://youtube.com/watch?v=" + resource.youtube;
-        ytLink.appendChild(com.createElementWithText("strong", "Link do YT: "));
-        ytLink.appendChild(com.createLinkWithURLText(ytURL));
+
+        if(resource.youtube) {
+            ytLink.appendChild(com.createElementWithText("strong", "Link do YT: "));
+            ytLink.appendChild(com.createLinkWithURLText(ytURL));
+        }
 
         this.eCContent.appendChild(rName);
         this.eCContent.appendChild(pdfLink);
@@ -197,6 +205,15 @@ export class TrainerResourceBrowser {
 
     }
 
+    buildTabDisableList() {
+        let ret = new Set();
+        if(this.currResource.pdf == undefined)
+            ret.add(1);
+        if(this.currResource.youtube == undefined)
+            ret.add(2);
+        return ret;
+    }
+
     show() {
         this.view.show();
         this.selectTopic(0);
@@ -207,13 +224,14 @@ export class TrainerResourceBrowser {
         this.currTopic = this.relevantResources[Object.keys(this.relevantResources)[num]];
         this.currResource = this.resources[this.currTopic.resource];
         this.view.updateTopicSelectorButtons(num);
+        this.view.updateTabButtons(this.selectedTab, this.buildTabDisableList());
         this.selectTab(this.selectedTab);
     }
 
     selectTab(num) {
         this.selectedTab = num;
         this.view.clearContent();
-        this.view.updateTabButtons(num);
+        this.view.updateTabButtons(num, this.buildTabDisableList());
         switch(String(num)) {
             case '0': this.view.showSummary(this.currTopic, this.currResource); break;
             case '1': this.view.showPresentation(this.currTopic, this.currResource); break;

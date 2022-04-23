@@ -5,6 +5,7 @@ import { TrainerCEQView, TrainerCEQ } from "./question-closed-ended.js"
 export class TrainerCEQMulti extends TrainerCEQ {
     constructor(containerElement, qData) {
         super(containerElement, qData);
+        this.isMulti = true;
     }
 
     buildCorrectAnswerSet() {

@@ -6,7 +6,7 @@ export class TrainerCEQView {
         this.containerElement = containerElement;
     }
 
-    static createAnswerElement(pos, num, text, callback) {
+    static createAnswerElement(pos, num, text, callback, isMulti) {
         let ret = document.createElement("div");
 
         ret.classList.add("trc-ceq-answer", "trc-hover-highlight");
@@ -15,15 +15,18 @@ export class TrainerCEQView {
         ret.setAttribute("data-pos", pos);
         ret.setAttribute("data-num", num);
         ret.onclick = callback;
+        if(isMulti) {
+            ret.classList.add("trc-multi");
+        }
         return ret;
     }
 
-    renderAnswers(answers, ansPermutation, btnCallback) {
+    renderAnswers(answers, ansPermutation, btnCallback, isMulti) {
         this.containerElement.innerHTML = "";
         let len = answers.length;
         for(let i=0; i<len; i++) {
             this.containerElement.appendChild(TrainerCEQView.createAnswerElement(
-                i, ansPermutation[i], answers[ansPermutation[i]], ()=>{btnCallback(i)}
+                i, ansPermutation[i], answers[ansPermutation[i]], ()=>{btnCallback(i)}, isMulti
             ));
         }
 
@@ -59,6 +62,7 @@ export class TrainerCEQ extends TrainerQuestion {
         super(containerElement, qData);
         this.selectedAnswers = new Set();
         this.view = new TrainerCEQView(this.containerElement);
+        this.isMulti = false;
         
         this.ansPermutation = com.randomPermutation(this.getNumAnswers());
         this.ansInvPermutation = com.inversePermutation(this.ansPermutation);
@@ -85,7 +89,7 @@ export class TrainerCEQ extends TrainerQuestion {
     render() {
         this.view.renderAnswers(this.qData.answers, this.ansPermutation, position => {
             this.selectAnswer(position);
-        });
+        }, this.isMulti);
     }
 
     selectAnswer(pos) {

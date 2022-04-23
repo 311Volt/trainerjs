@@ -140,6 +140,27 @@ p {
 	/*color: var(--tcol-text-gray);*/
 }
 
+.trc-multi::before {
+	content: '';
+	display: inline-block;
+	background: url("check0.svg");
+	background-size: cover;
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+	transition: background-image 0.15s;
+}
+.trc-multi.trc-selected-answer::before {
+	content: '';
+	display: inline-block;
+	background: url("check1.svg");
+	background-size: cover;
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+	transition: background-image 0.15s;
+}
+
 
 button {
 	font-family: inherit;
