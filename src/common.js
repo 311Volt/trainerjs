@@ -33,7 +33,7 @@ export function numClamp(x, min, max) {
 export function randomPermutation(num) {
 	let ret = integerSequence(num);
 	for(var i=num-1; i>=1; i--) {
-		let k = Math.floor(Math.random() * i);
+		let k = Math.floor(Math.random() * (i+1));
 		//[ret[k], ret[i]] = [ret[i], ret[k]];
 		let tmp = ret[k];
 		ret[k] = ret[i];

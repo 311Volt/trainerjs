@@ -13,7 +13,8 @@
             "r1": {
                 "resource": "W01",
                 "ytTimestamps": ["1m4s", "1m40s"],
-                "pdfPages": [3,4,5]
+                "pdfPages": [3,4,5],
+                "comment": "jakis komentarz"
             },
             "r2": {
                 "resource": "W01",
@@ -35,7 +36,7 @@
         "relevantResources": {
             "r1": {
                 "resource": "W01",
-                "ytTimestamps": ["14m37s"],
+                
                 "pdfPages": [3,4,5]
             }
         }

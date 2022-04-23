@@ -50,14 +50,18 @@ class TRBView {
     static createTimestampList(list, callback) {
         let ret = document.createElement("div");
         ret.appendChild(com.createElementWithText("strong", "Istotne momenty: "));
+        if(list) {
+            for(let i=0; i<list.length; i++) {
+                let btn = document.createElement("button");
+                btn.classList.add("trc-yt-timestamp");
+                btn.innerText = list[i];
+                btn.onclick = () => {callback(i)};
+                ret.appendChild(btn);
+            }
+        } else {
+            ret.appendChild(com.createElementWithText("span", "brak"));
+        }
         
-        for(let i=0; i<list.length; i++) {
-            let btn = document.createElement("button");
-            btn.classList.add("trc-yt-timestamp");
-            btn.innerText = list[i];
-            btn.onclick = () => {callback(i)};
-            ret.appendChild(btn);
-        };
 
         return ret;
     }
@@ -65,8 +69,9 @@ class TRBView {
     static createYTIFrameURL(videoId, timestamp) {
         return "https://youtube.com/embed/"
             + videoId
-            + "?start=" + com.timestampToSeconds(timestamp)
-            + "&autoplay=1";
+            + "?autoplay=1"
+            + "&start=" + com.timestampToSeconds(timestamp)
+        ;
     }
 
     static createYouTubeIFrame(videoId, timestamp) {
@@ -129,7 +134,6 @@ class TRBView {
     }
 
     showSummary(topic, resource) {
-
         let rName = document.createElement("div");
         rName.appendChild(com.createElementWithText("strong", "Pytanie z zakresu: "));
         rName.appendChild(com.createElementWithText("span", topic.resource));
@@ -146,10 +150,19 @@ class TRBView {
             ytLink.appendChild(com.createLinkWithURLText(ytURL));
         }
 
+        
+
         this.eCContent.appendChild(rName);
         this.eCContent.appendChild(pdfLink);
         this.eCContent.appendChild(TRBView.createSlideNumberList(topic.pdfPages));
         this.eCContent.appendChild(ytLink);
+
+        if(topic.comment) {
+            let comm = document.createElement("div");
+            comm.appendChild(com.createElementWithText("strong", "Komentarz: "));
+            comm.appendChild(com.createElementWithText("span", topic.comment));
+            this.eCContent.appendChild(comm);
+        }
     }
 
     showPresentation(topic, resource) {
@@ -173,7 +186,8 @@ class TRBView {
                 );
             })
         );
-        this.eCContent.appendChild(TRBView.createYouTubeIFrame(resource.youtube, topic.ytTimestamps[0]));
+        let ts = topic.ytTimestamps ? topic.ytTimestamps[0] : "0";
+        this.eCContent.appendChild(TRBView.createYouTubeIFrame(resource.youtube, ts));
     }
 }
 
