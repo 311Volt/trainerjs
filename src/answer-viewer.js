@@ -27,7 +27,7 @@ export class TrainerAnswerViewer {
 
         let answerList = new Array();
 
-        if(qData.correctAnswer) {
+        if(qData.correctAnswer != undefined) {
             answerList.push(qData.answers[qData.correctAnswer]);
         } else if(qData.correctAnswers) {
             qData.correctAnswers.forEach((q) => {
