@@ -1,7 +1,8 @@
 [
     {
         "questionType": "closed-ended",
-        "question": "tresc pytania 1",
+        "question": "tresc <b>pytania</b> 1",
+        "enableRawHTML": true,
         "answers": [
             "zla odp 1",
             "zla odp 2",

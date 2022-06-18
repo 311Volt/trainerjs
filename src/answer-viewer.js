@@ -5,10 +5,20 @@ export class TrainerAnswerViewer {
         this.containerElement = containerElement;
     }
 
-    static createAnswerElement(ans) {
+    static createAnswerElement(content, mode) {
         let ret = document.createElement("div");
         ret.classList.add("trc-ceq-answer");
-        ret.innerText = ans;
+        if(mode) {
+            ret.innerHTML = content;
+        } else {
+            ret.innerText = content;
+        }
+        return ret;
+    }
+
+    static createInfoElement(content, mode) {
+        let ret = TrainerAnswerViewer.createAnswerElement(content, mode);
+        ret.prepend(com.createElementWithText("strong", "Info: "));
         return ret;
     }
 
@@ -40,13 +50,19 @@ export class TrainerAnswerViewer {
                 answerList.push(sq.question + ": " + sq.exampleAnswer);
             });
         }
-
+        let dMode = qData.enableRawHTML==true;
 
         this.containerElement.appendChild(com.createElementWithText("h2", hdrText));
         answerList.forEach((q) => {
             this.containerElement.appendChild(
-                TrainerAnswerViewer.createAnswerElement(q)
+                TrainerAnswerViewer.createAnswerElement(q, dMode)
             );
         });
+
+        if(qData.info != undefined) {
+            this.containerElement.appendChild(
+                TrainerAnswerViewer.createInfoElement(qData.info, dMode)
+            )
+        }
     }
 }

@@ -1,4 +1,6 @@
 
+import * as com from "./common.js";
+
 export class TrainerQuestion {
     constructor(containerElement, qData) {
         this.qData = qData;
@@ -11,8 +13,12 @@ export class TrainerQuestion {
         
     }
 
-    render() {
-        this.eQText.innerText = this.qData.question;
+    showTitle(node) {
+        if(this.qData.enableRawHTML == true) {
+            node.innerHTML = this.qData.question;
+        } else {
+            node.innerText = this.qData.question;
+        }
     }
 
     evaluate() {

@@ -44,7 +44,7 @@ export class TrainerTestView {
     displayQuestionTitle(num, numQuestions, question) {
         this.eQNumberText.innerText = "Pytanie " + (num+1) + "/" + numQuestions;
         if(question) {
-            this.eQContent.innerText = question.qData.question;
+            question.showTitle(this.eQContent);
         }
     }
 
